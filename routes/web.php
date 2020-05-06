@@ -19,3 +19,4 @@ Route::get('/', function () {
 Route::get('users/index','users@index');
 Route::get('users/create_get','users@create_get');
 Route::post('users/create_post','users@create_post');
+Route::get('users/view','users@view');

@@ -20,10 +20,19 @@ class users extends Controller
             'users_c_first_name'=>'required',
             'users_c_last_name'=>'required',
         ]);
-        return $request->input();
+        $res = DB::table('users')->insert([
+            'users_c_first_name'=> $request->input('users_c_first_name'),
+            'users_c_last_name'=> $request->input('users_c_last_name'),
+        ]);
+        if ($res == 1){
+            //success
+        }else{
+            //failed
+        }
     }
 
-    function view($id){
-        return DB::table('users')->where('users_c_id', $id)->first();
+    function view(){
+        $res = DB::table('users')->where('users_c_id',1)->get();
+        return $res;
     }
 }

@@ -37,9 +37,9 @@ tr:nth-child(even) {
             <td>{{ $item->users_c_id }}</td>
             <td>{{ $item->users_c_first_name }}</td>
             <td>{{ $item->users_c_last_name }}</td>
-            <td>edit</td>
-            <td>view</td>
-            <td>delete</td>
+            <td>edit link</td>
+            <td>view link</td>
+            <td>delete link</td>
         </tr>
     @endforeach
 </table>
