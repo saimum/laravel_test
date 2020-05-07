@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <body>
-
-<h2>HTML Forms</h2>
+<x-header/>
+<h2>Create</h2>
 
 <form method="post" action="/users/create_post">
   {{csrf_field()}}

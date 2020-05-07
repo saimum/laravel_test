@@ -20,8 +20,8 @@ tr:nth-child(even) {
 </style>
 </head>
 <body>
-
-<h2>HTML Table</h2>
+<x-header/>
+<h2>Index</h2>
 
 <table>
   <tr>
