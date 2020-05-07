@@ -17,18 +17,7 @@ class users extends Controller
         // return view('users.create_get',["message"=>$message]);
         return view('users.create_get');
     }
-    function create_post(Request $request){
-        
-        $rules = [
-            'users_c_first_name' => 'required',
-            'users_c_last_name' => 'required',
-        ];
-    
-        $customMessages = [
-            'users_c_first_name.required' => 'first name is required.',
-            'users_c_last_name.required' => 'last name is required.'
-        ];
-    
+    function create_post(Request $request){            
         $this->validate(
             $request, 
             [
@@ -38,13 +27,13 @@ class users extends Controller
             [
                 'users_c_first_name.required' => 'first name is required.',
                 'users_c_last_name.required' => 'last name is required.'
-            ]);
-
+        ]);
 
         $res = DB::table('users')->insert([
             'users_c_first_name'=> $request->input('users_c_first_name'),
             'users_c_last_name'=> $request->input('users_c_last_name'),
         ]);
+        
         $message;
         if ($res == 1){
             $message = 'Succedded';
