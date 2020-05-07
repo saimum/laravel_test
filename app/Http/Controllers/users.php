@@ -13,6 +13,8 @@ class users extends Controller
     }
 
     function create_get(){
+        $message = 'Test Message';
+        // return view('users.create_get',["message"=>$message]);
         return view('users.create_get');
     }
     function create_post(Request $request){
@@ -24,11 +26,13 @@ class users extends Controller
             'users_c_first_name'=> $request->input('users_c_first_name'),
             'users_c_last_name'=> $request->input('users_c_last_name'),
         ]);
+        $message;
         if ($res == 1){
-            //success
+            $message = 'Succedded';
         }else{
-            //failed
+            $message = 'Failed';
         }
+        return view('users.create_get',["message"=>$message, "model"=>$request->input()]);
     }
 
     function view(){
