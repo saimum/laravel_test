@@ -18,10 +18,29 @@ class users extends Controller
         return view('users.create_get');
     }
     function create_post(Request $request){
-        $request->validate([
-            'users_c_first_name'=>'required',
-            'users_c_last_name'=>'required',
-        ]);
+        
+        $rules = [
+            'users_c_first_name' => 'required',
+            'users_c_last_name' => 'required',
+        ];
+    
+        $customMessages = [
+            'users_c_first_name.required' => 'first name is required.',
+            'users_c_last_name.required' => 'last name is required.'
+        ];
+    
+        $this->validate(
+            $request, 
+            [
+                'users_c_first_name' => 'required',
+                'users_c_last_name' => 'required',
+            ],
+            [
+                'users_c_first_name.required' => 'first name is required.',
+                'users_c_last_name.required' => 'last name is required.'
+            ]);
+
+
         $res = DB::table('users')->insert([
             'users_c_first_name'=> $request->input('users_c_first_name'),
             'users_c_last_name'=> $request->input('users_c_last_name'),
@@ -29,10 +48,11 @@ class users extends Controller
         $message;
         if ($res == 1){
             $message = 'Succedded';
+            return view('users.create_get',["message"=>$message]);
         }else{
             $message = 'Failed';
+            return view('users.create_get',["message"=>$message, "model"=>$request->input()]);
         }
-        return view('users.create_get',["message"=>$message, "model"=>$request->input()]);
     }
 
     function view(){
