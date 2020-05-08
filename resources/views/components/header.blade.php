@@ -1,3 +1,3 @@
 <h1>
-    Test Laravel
+    Test Laravel [from component header]
 </h1>

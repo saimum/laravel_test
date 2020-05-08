@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('users/test_get','users@test_get');
+
 Route::get('users/index','users@index');
 Route::get('users/create_get','users@create_get');
 Route::post('users/create_post','users@create_post');

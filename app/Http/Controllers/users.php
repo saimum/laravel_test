@@ -7,11 +7,15 @@ use Illuminate\Support\Facades\DB;
 
 class users extends Controller
 {
+    function test_get(){
+        return view('users.test_get');
+    }
+    
     function index(){
         $list = DB::table('users')->get();
         return view('users.index')->with('list',$list);
     }
-
+    
     function create_get(){
         $message = 'Test Message';
         // return view('users.create_get',["message"=>$message]);
@@ -33,7 +37,7 @@ class users extends Controller
             'users_c_first_name'=> $request->input('users_c_first_name'),
             'users_c_last_name'=> $request->input('users_c_last_name'),
         ]);
-        
+
         $message;
         if ($res == 1){
             $message = 'Succedded';
