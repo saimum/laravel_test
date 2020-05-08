@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
+@extends('layout')
 <style>
 table {
   font-family: arial, sans-serif;
@@ -18,11 +16,9 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 </style>
-</head>
-<body>
-<x-header/>
+@section('content')
 <h2>Index</h2>
-
+<!-- <x-header/> -->
 <table>
   <tr>
     <th>users_c_id</th>
@@ -43,6 +39,4 @@ tr:nth-child(even) {
         </tr>
     @endforeach
 </table>
-
-</body>
-</html>
+@endsection

@@ -1,8 +1,8 @@
-<!DOCTYPE html>
-<html>
-<body>
-<x-header/>
+@extends('layout')
+@section('content')
+
 <h2>Create</h2>
+<!-- <x-header/> -->
 @if(isset($message))         
   <h3>{{$message}}</h>
 @endif
@@ -20,6 +20,4 @@
   @enderror
   <input type="submit" value="Submit">
 </form> 
-
-</body>
-</html>
+@endsection

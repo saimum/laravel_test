@@ -5,7 +5,7 @@
 </head>
 <body>
     <!-- <x-header/> -->
-    <h1>Test Laravel [from layout main]</h1>
+    <h1>Test Laravel</h1>
     <div class='container'>
         @yield('content')
     </div>
