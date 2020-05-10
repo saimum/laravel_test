@@ -17,11 +17,9 @@ class users extends Controller
     }
     
     function create_get(){
-        $message = 'Test Message';
-        // return view('users.create_get',["message"=>$message]);
         return view('users.create_get');
     }
-    function create_post(Request $request){            
+    function create_post(Request $request){   
         $this->validate(
             $request, 
             [
@@ -38,13 +36,12 @@ class users extends Controller
             'users_c_last_name'=> $request->input('users_c_last_name'),
         ]);
 
-        $message;
         if ($res == 1){
-            $message = 'Succedded';
-            return view('users.create_get',["message"=>$message]);
+            $confirmation_message = 'Succedded';
+            return view('users.create_get',["confirmation_message"=>$confirmation_message]);
         }else{
-            $message = 'Failed';
-            return view('users.create_get',["message"=>$message, "model"=>$request->input()]);
+            $confirmation_message = 'Failed';
+            return view('users.create_get',["confirmation_message"=>$confirmation_message, "model"=>$request->input()]);
         }
     }
 

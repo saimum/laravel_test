@@ -1,10 +1,8 @@
 @extends('layout')
 @section('content')
 
-<h2>Create</h2>
-<!-- <x-header/> -->
-@if(isset($message))         
-  <h3>{{$message}}</h>
+@if(isset($confirmation_message))         
+  <h3>{{$confirmation_message}}</h3>
 @endif
 <form method="post" action="/users/create_post">
   {{csrf_field()}}

@@ -4,8 +4,8 @@
 <title></title>
 </head>
 <body>
-    <!-- <x-header/> -->
-    <h1>Test Laravel</h1>
+    
+    <h1>Test Laravel:layout</h1>
     <div class='container'>
         @yield('content')
     </div>
