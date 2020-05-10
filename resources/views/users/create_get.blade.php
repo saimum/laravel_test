@@ -1,9 +1,12 @@
 @extends('layout')
 @section('content')
 
+<x-header title="Create Page"/>
+
 @if(isset($confirmation_message))         
   <h3>{{$confirmation_message}}</h3>
 @endif
+
 <form method="post" action="/users/create_post">
   {{csrf_field()}}
   <label for="users_c_first_name">First name:</label>
