@@ -19,6 +19,11 @@ Route::get('/', function () {
 Route::get('users/test_get','users@test_get');
 
 Route::get('users/index','users@index');
+
 Route::get('users/create_get','users@create_get');
 Route::post('users/create_post','users@create_post');
+
 Route::get('users/view','users@view');
+
+Route::get('users/session_get','users@session_get');
+Route::post('users/session_post','users@session_post');

@@ -10,6 +10,15 @@ class users extends Controller
     function test_get(){
         return view('users.test_get');
     }
+
+    function session_get(){
+        return view('users.session_get');
+    }
+    function session_post(Request $request){
+        $request->session()->put('session_data', $request->input());
+        return $request->session()->get('session_data');
+    }
+
     
     function index(){
         $list = DB::table('users')->get();
