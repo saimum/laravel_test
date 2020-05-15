@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
 Route::get('users/test_get','users@test_get');
 
 Route::get('users/index','users@index');
@@ -23,7 +24,9 @@ Route::get('users/index','users@index');
 Route::get('users/create_get','users@create_get');
 Route::post('users/create_post','users@create_post');
 
-Route::get('users/view','users@view');
+Route::get('users/set_session_get','users@set_session_get');
+Route::post('users/set_session_post','users@set_session_post');
 
-Route::get('users/session_get','users@session_get');
-Route::post('users/session_post','users@session_post');
+Route::group(['middleware'=>['CustomLoginAuthentication']],function(){
+    Route::get('users/view/{id}','users@view');
+});

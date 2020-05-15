@@ -11,10 +11,10 @@ class users extends Controller
         return view('users.test_get');
     }
 
-    function session_get(){
-        return view('users.session_get');
+    function set_session_get(){
+        return view('users.set_session_get');
     }
-    function session_post(Request $request){
+    function set_session_post(Request $request){
         $request->session()->put('session_data', $request->input());
         return session()->get('session_data');
     }
@@ -54,8 +54,8 @@ class users extends Controller
         }
     }
 
-    function view(){
-        $res = DB::table('users')->where('users_c_id',1)->get();
+    function view($id){
+        $res = DB::table('users')->where('users_c_id',$id)->get();
         return $res;
     }
 }

@@ -7,7 +7,7 @@
   <h3>{{$confirmation_message}}</h3>
 @endif
 
-<form method="post" action="/users/session_post">
+<form method="post" action="/users/set_session_post">
   {{csrf_field()}}
   <label for="users_c_first_name">First name:</label>
   <input type="text" id="users_c_first_name" name="users_c_first_name" value= "{{ isset($model) ? $model['users_c_first_name'] : '' }}"><br>
