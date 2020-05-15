@@ -16,7 +16,7 @@ class users extends Controller
     }
     function session_post(Request $request){
         $request->session()->put('session_data', $request->input());
-        return $request->session()->get('session_data');
+        return session()->get('session_data');
     }
 
     
