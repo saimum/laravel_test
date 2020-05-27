@@ -30,3 +30,6 @@ Route::post('users/set_session_post','users@set_session_post');
 Route::group(['middleware'=>['CustomLoginAuthentication']],function(){
     Route::get('users/view/{id}','users@view');
 });
+
+Route::get('product_category/product_category_create','product_category@product_category_create');
+Route::post('product_category/product_category_create','product_category@product_category_create');
