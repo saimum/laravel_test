@@ -7,6 +7,10 @@ use Illuminate\Support\Facades\DB;
 
 class product_category extends Controller
 {
+    function blank_page(){
+        return view('product_category.blank_page');
+    }
+
     function product_category_create(Request $request){
         $method = $request->method();
         if($method == 'GET'){
@@ -14,7 +18,7 @@ class product_category extends Controller
         }else{
             return $request->input();
         }
-        
     }
+    
     
 }
