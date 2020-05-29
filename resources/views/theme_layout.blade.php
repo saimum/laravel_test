@@ -329,9 +329,11 @@
 
         </nav>
         <!-- End of Topbar -->
-
-        @yield('content')
-
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+          @yield('content')          
+        </div>
+        <!-- /.container-fluid -->
       </div>
       <!-- End of Main Content -->
 
