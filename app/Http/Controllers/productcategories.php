@@ -17,10 +17,12 @@ class productcategories extends Controller
         if($method == 'GET'){
             return view('productcategories.productcategories_create');
         }
+        //save file
         
         $productcategory = new productcategory();
         $productcategory->productcategory_title = $request->productcategory_title;
         $productcategory->productcategory_description = $request->productcategory_description;
+        $productcategory->productcategory_imagepath = $request->file('productcategory_imagepath')->store('photos');
         $res = $productcategory->save();
 
         if($res == 1){
