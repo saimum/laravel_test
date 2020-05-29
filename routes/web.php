@@ -31,6 +31,6 @@ Route::group(['middleware'=>['CustomLoginAuthentication']],function(){
     Route::get('users/view/{id}','users@view');
 });
 
-Route::get('productcategory/blank_page','productcategory@blank_page');
-Route::get('productcategory/productcategory_create','productcategory@productcategory_create');
-Route::post('productcategory/productcategory_create','productcategory@productcategory_create');
+Route::get('productcategories/blank_page','productcategories@blank_page');
+Route::get('productcategories/productcategories_create','productcategories@productcategories_create');
+Route::post('productcategories/productcategories_create','productcategories@productcategories_create');

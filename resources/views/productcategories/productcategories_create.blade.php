@@ -1,7 +1,7 @@
 @extends('theme_layout')
 @section('content')        
 
-<form method="post" action="/productcategory/productcategory_create">
+<form method="post" action="/productcategories/productcategories_create">
   {{csrf_field()}}
   <div class="form-group">
     <label for="productcategory_title">productcategory_title</label>
