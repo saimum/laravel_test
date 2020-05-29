@@ -17,13 +17,18 @@ class productcategories extends Controller
         if($method == 'GET'){
             return view('productcategories.productcategories_create');
         }
-        // return $request->input();
-        // $productcategory = new productcategory();
+        
         $productcategory = new productcategory();
         $productcategory->productcategory_title = $request->productcategory_title;
         $productcategory->productcategory_description = $request->productcategory_description;
-        $productcategory->save();
-        return view('productcategories.blank_page');
+        $res = $productcategory->save();
+
+        if($res == 1){
+            return view('productcategories.productcategories_create');
+        }
+        else{
+            return view('productcategories.blank_page');
+        }
     }
     
     
